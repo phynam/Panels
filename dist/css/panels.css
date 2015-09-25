@@ -5,7 +5,7 @@ html, body {
 .panels {
   position: relative;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .panels > * {
   transition: left 400ms, right 400ms;
@@ -40,30 +40,30 @@ html, body {
 }
 
 .panels__left {
-  width: 300px;
-  left: -300px;
+  width: 200px;
+  left: -150px;
 }
 
 .panels__right {
-  width: 300px;
-  right: -300px;
+  width: 270px;
+  right: -220px;
 }
 
 .panels.is_left_active .panels__left {
   left: 0;
 }
 .panels.is_left_active .panels__main {
-  left: 300px;
+  left: 200px;
 }
 .panels.is_left_active .panels__right {
-  left: 600px;
+  left: 400px;
 }
 
 .panels.is_right_active .panels__left {
-  left: -600px;
+  left: -540px;
 }
 .panels.is_right_active .panels__main {
-  left: -300px;
+  left: -270px;
 }
 .panels.is_right_active .panels__right {
   right: 0;

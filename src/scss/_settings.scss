@@ -3,6 +3,7 @@
 /////////////////////////
 
 $animation-time: 400ms;
+$animation-offset: 50px;
 
 ////////////////////
 //// Main panel ////
@@ -15,5 +16,5 @@ $panel-main-disabled-color: rgba(180, 180, 180, 0.6);
 //// Off-canvas panels ////
 ///////////////////////////
 
-$panel-left-width: 300px;
-$panel-right-width: 300px;
+$panel-left-width: 200px;
+$panel-right-width: 270px;

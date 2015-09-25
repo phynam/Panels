@@ -5,7 +5,7 @@
 .panels {
   position: relative;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 
   & > * {
     transition: left $animation-time, right $animation-time;
@@ -52,12 +52,12 @@
 
 .panels__left {
   width: $panel-left-width;
-  left: -$panel-left-width;
+  left: -$panel-left-width + $animation-offset;
 }
 
 .panels__right {
   width: $panel-right-width;
-  right: -$panel-right-width;
+  right: -$panel-right-width + $animation-offset;
 }
 
 //////////////////////////
