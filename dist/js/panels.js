@@ -48,7 +48,6 @@
                 _$panels.on('click', '.panels__main.is_disabled', function() {
                     _context.close_active();
                 });
-
             });
         };
 

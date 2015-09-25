@@ -20,7 +20,7 @@ html, body {
 }
 .panels__main:before {
   display: block;
-  position: relative;
+  position: absolute;
   content: '';
   width: 100%;
   height: 100%;
@@ -29,7 +29,7 @@ html, body {
   background-color: transparent;
 }
 
-.panels__main.is-disabled:before {
+.panels__main.is_disabled:before {
   background-color: rgba(180, 180, 180, 0.6);
   z-index: 50;
 }
@@ -49,5 +49,31 @@ html, body {
 .panels__right {
   width: 300px;
   right: 0;
+  transform: translateX(300px);
+}
+
+.panels.is_left_active .panels__main {
+  transform: translateX(300px);
+  /* TODO: Use variable */
+}
+
+.panels.is_right_active .panels__main {
   transform: translateX(-300px);
+  /* TODO: Use variable */
+}
+
+.panels.is_left_active .panels__left {
+  transform: translateX(0);
+}
+
+.panels.is_left_active .panels__right {
+  transform: translateX(600px);
+}
+
+.panels.is_right_active .panels__right {
+  transform: translateX(0);
+}
+
+.panels.is_right_active .panels__left {
+  transform: translateX(-600px);
 }
