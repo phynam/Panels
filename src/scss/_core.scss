@@ -8,7 +8,7 @@
   overflow-x: hidden;
 
   & > * {
-    transition: transform $animation-time;
+    transition: left $animation-time, right $animation-time;
   }
 }
 
@@ -18,9 +18,9 @@
 
 .panels__main {
   position: relative;
+  right: 0; left: 0;
   height: inherit;
   z-index: 1;
-  transform: translateX(0);
   background: $panel-main-bg-color;
 
   &:before {
@@ -54,38 +54,42 @@
 
 .panels__left {
   width: $panel-left-width;
-  left: 0;
-  transform: translateX(-$panel-left-width);
+  left: -$panel-left-width;
 }
 
 .panels__right {
   width: $panel-right-width;
-  right: 0;
-  transform: translateX($panel-right-width);
+  right: -$panel-right-width;
 }
 
 //////////////////////////
 //// Transition logic ////
 //////////////////////////
 
-// TODO: Move to JS
-.panels.is_left_active .panels__main {
-  transform: translateX(300px); /* TODO: Use variable */
-}
-.panels.is_right_active .panels__main {
-  transform: translateX(-300px); /* TODO: Use variable */
+.panels.is_left_active {
+  .panels__left {
+    left: 0;
+  }
+
+  .panels__main {
+    left: $panel-left-width;
+  }
+
+  .panels__right {
+    left: $panel-left-width * 2;
+  }
 }
 
-.panels.is_left_active .panels__left {
-  transform: translateX(0);
-}
-.panels.is_left_active .panels__right {
-  transform: translateX(600px);
-}
+.panels.is_right_active {
+  .panels__left {
+    left: -($panel-right-width * 2);
+  }
 
-.panels.is_right_active .panels__right {
-  transform: translateX(0);
-}
-.panels.is_right_active .panels__left {
-  transform: translateX(-600px);
+  .panels__main {
+    left: -$panel-right-width;
+  }
+
+  .panels__right {
+    right: 0;
+  }
 }

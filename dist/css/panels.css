@@ -8,14 +8,15 @@ html, body {
   overflow-x: hidden;
 }
 .panels > * {
-  transition: transform 400ms;
+  transition: left 400ms, right 400ms;
 }
 
 .panels__main {
   position: relative;
+  right: 0;
+  left: 0;
   height: inherit;
   z-index: 1;
-  transform: translateX(0);
   background: #eee;
 }
 .panels__main:before {
@@ -42,38 +43,30 @@ html, body {
 
 .panels__left {
   width: 300px;
-  left: 0;
-  transform: translateX(-300px);
+  left: -300px;
 }
 
 .panels__right {
   width: 300px;
-  right: 0;
-  transform: translateX(300px);
-}
-
-.panels.is_left_active .panels__main {
-  transform: translateX(300px);
-  /* TODO: Use variable */
-}
-
-.panels.is_right_active .panels__main {
-  transform: translateX(-300px);
-  /* TODO: Use variable */
+  right: -300px;
 }
 
 .panels.is_left_active .panels__left {
-  transform: translateX(0);
+  left: 0;
 }
-
+.panels.is_left_active .panels__main {
+  left: 300px;
+}
 .panels.is_left_active .panels__right {
-  transform: translateX(600px);
-}
-
-.panels.is_right_active .panels__right {
-  transform: translateX(0);
+  left: 600px;
 }
 
 .panels.is_right_active .panels__left {
-  transform: translateX(-600px);
+  left: -600px;
+}
+.panels.is_right_active .panels__main {
+  left: -300px;
+}
+.panels.is_right_active .panels__right {
+  right: 0;
 }
