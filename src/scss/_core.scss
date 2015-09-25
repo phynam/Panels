@@ -1,0 +1,65 @@
+////////////////
+//// Module ////
+////////////////
+
+.panels {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+
+  & > * {
+    transition: transform $animation-time;
+  }
+}
+
+////////////////////
+//// Main panel ////
+////////////////////
+
+.panels__main {
+  position: relative;
+  height: inherit;
+  z-index: 1;
+  transform: translateX(0);
+  background: $panel-main-bg-color;
+
+  &:before {
+    display: block;
+    position: relative;
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    transition: background-color $animation-time;
+    background-color: transparent;
+  }
+}
+
+.panels__main.is-disabled {
+  &:before {
+    background-color: $panel-main-disabled-color;
+    z-index: 50;
+  }
+}
+
+/////////////////////
+//// Side panels ////
+/////////////////////
+
+.panels__left, .panels__right {
+  position: absolute;
+  height: inherit;
+  top: 0;
+}
+
+.panels__left {
+  width: $panel-left-width;
+  left: 0;
+  transform: translateX(-$panel-left-width);
+}
+
+.panels__right {
+  width: $panel-right-width;
+  right: 0;
+  transform: translateX(-$panel-right-width);
+}

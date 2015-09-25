@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panels Test</title>
+    <link rel="stylesheet" href="../css/panels.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="../js/panels.js"></script>
+    <style>
+
+    body {
+        background: #ddd;
+        margin: 0;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        height: 50px;
+        width: 100%;
+        background: #222;
+        color: #fff;
+    }
+
+    [data-panels-trigger] {
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+
+<div class="panels">
+    <div class="panels__left" aria-hidden="true">
+        Tests
+    </div>
+    <div class="panels__main" aria-role="main">
+        <header>
+            <div aria-role="button" data-panels-trigger="left">Left</div>
+            <div aria-role="button" data-panels-trigger="right">Right</div>
+        </header>
+    </div>
+    <div class="panels__right" aria-hidden="true">
+        Tests
+    </div>
+</div>
+
+</body>
+</html>
