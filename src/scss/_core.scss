@@ -5,10 +5,13 @@
 .panels {
   position: relative;
   height: 100%;
-  overflow: hidden;
 
   & > * {
     transition: left $animation-time, right $animation-time;
+  }
+
+  &.is_active {
+    overflow: hidden;
   }
 }
 
@@ -45,8 +48,8 @@
 /////////////////////
 
 .panels__left, .panels__right {
-  position: absolute;
-  height: inherit;
+  position: fixed;
+  height: 100%;
   top: 0;
 }
 

@@ -5,10 +5,12 @@ html, body {
 .panels {
   position: relative;
   height: 100%;
-  overflow: hidden;
 }
 .panels > * {
   transition: left 400ms, right 400ms;
+}
+.panels.is_active {
+  overflow: hidden;
 }
 
 .panels__main {
@@ -34,8 +36,8 @@ html, body {
 }
 
 .panels__left, .panels__right {
-  position: absolute;
-  height: inherit;
+  position: fixed;
+  height: 100%;
   top: 0;
 }
 
