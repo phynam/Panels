@@ -34,6 +34,7 @@
         var _context = this,
             _panel_class_prefix = '.panels__panel--',
             _active_panel,
+            _animation_time,
             _$panels = $('.panels'),
             _$panels_main = _$panels.find(_panel_class_prefix + 'main');
 

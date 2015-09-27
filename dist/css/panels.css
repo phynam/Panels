@@ -5,9 +5,10 @@ html {
 .panels {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 .panels.is_active {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .panels [class^='panels__panel'] {
@@ -56,15 +57,6 @@ html {
   background-color: #eee;
 }
 
-.panels__panel--modal {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .panels.is_active--left .panels__panel--left {
   left: 0;
 }
@@ -83,8 +75,4 @@ html {
 }
 .panels.is_active--right .panels__panel--right {
   right: 0;
-}
-
-.panels.is_active--modal .panels__panel--modal {
-  display: block;
 }
