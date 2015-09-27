@@ -4,6 +4,7 @@
 
 .panels {
   height: 100%;
+  margin: 0;
 
   &.is_active {
     overflow: hidden;
@@ -70,7 +71,7 @@
 //// Positioning logic ////
 ///////////////////////////
 
-.panels.is_left_active {
+.panels.is_active--left {
   .panels__panel--left {
     left: 0;
   }
@@ -84,7 +85,7 @@
   }
 }
 
-.panels.is_right_active {
+.panels.is_active--right {
   .panels__panel--left {
     left: -($panel-right-width * 2);
   }

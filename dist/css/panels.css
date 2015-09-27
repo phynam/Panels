@@ -4,6 +4,7 @@ html {
 
 .panels {
   height: 100%;
+  margin: 0;
 }
 .panels.is_active {
   overflow: hidden;
@@ -19,7 +20,7 @@ html {
   left: 0;
   min-height: 100%;
   z-index: 1;
-  background: #eee;
+  background: #fff;
 }
 .panels__panel--main:before {
   display: none;
@@ -52,25 +53,25 @@ html {
 .panels__panel--right {
   width: 270px;
   right: -220px;
-  background-color: #000;
+  background-color: #eee;
 }
 
-.panels.is_left_active .panels__panel--left {
+.panels.is_active--left .panels__panel--left {
   left: 0;
 }
-.panels.is_left_active .panels__panel--main {
+.panels.is_active--left .panels__panel--main {
   left: 200px;
 }
-.panels.is_left_active .panels__panel--right {
+.panels.is_active--left .panels__panel--right {
   right: -400px;
 }
 
-.panels.is_right_active .panels__panel--left {
+.panels.is_active--right .panels__panel--left {
   left: -540px;
 }
-.panels.is_right_active .panels__panel--main {
+.panels.is_active--right .panels__panel--main {
   left: -270px;
 }
-.panels.is_right_active .panels__panel--right {
+.panels.is_active--right .panels__panel--right {
   right: 0;
 }
