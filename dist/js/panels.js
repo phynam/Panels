@@ -34,7 +34,7 @@
         var _context = this,
             _panel_class_prefix = '.panels__panel--',
             _active_panel,
-            _animation_time,
+            _animation_time = 400,
             _$panels = $('.panels'),
             _$panels_main = _$panels.find(_panel_class_prefix + 'main');
 
@@ -51,6 +51,16 @@
                 _$panels.on('click', (_panel_class_prefix + 'main[aria-disabled="true"]'), function() {
                     _context.close_active();
                 });
+
+                // Get animation time value from pseudo element
+                if(window.getComputedStyle) {
+                    var el = _$panels[0],
+                        raw_val = window.getComputedStyle(el,':after').getPropertyValue('content');
+
+                    if(raw_val.length > 0) {
+                        _animation_time = parseInt(raw_val.match(/\d+/)[0]);
+                    }
+                }
             });
         };
 

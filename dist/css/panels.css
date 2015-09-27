@@ -10,6 +10,10 @@ html {
 .panels.is_active {
   overflow-y: hidden;
 }
+.panels:after {
+  display: none;
+  content: "400ms";
+}
 
 .panels [class^='panels__panel'] {
   transition: left 400ms, right 400ms;
