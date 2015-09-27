@@ -11,7 +11,7 @@
   }
 }
 
-.panels__panel {
+.panels [class^="panels__panel"] {
   transition: left $animation-time, right $animation-time;
 }
 
@@ -45,9 +45,9 @@
   }
 }
 
-/////////////////////
-//// Side panels ////
-/////////////////////
+///////////////////////
+//// Flyout panels ////
+///////////////////////
 
 .panels__panel--left, .panels__panel--right {
   position: fixed;
@@ -65,6 +65,18 @@
   width: $panel-right-width;
   right: -$panel-right-width + $animation-offset;
   background-color: $panel-right-bg-color;
+}
+
+/////////////////////
+//// Modal panel ////
+/////////////////////
+
+.panels__panel--modal {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 ///////////////////////////
@@ -96,5 +108,11 @@
 
   .panels__panel--right {
     right: 0;
+  }
+}
+
+.panels.is_active--modal {
+  .panels__panel--modal {
+    display: block;
   }
 }

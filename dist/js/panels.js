@@ -5,8 +5,8 @@
         // Public methods
         this.show = function(panel) {
             if(typeof panel != 'undefined') {
-                var $panel = $(_panel_class_prefix + panel);
                 this.close_active();
+                var $panel = $(_panel_class_prefix + panel);
                 _$panels.addClass('is_active is_active--' + panel);
                 _$panels_main.addClass('is_disabled');
                 $panel.attr('aria-hidden', 'false');

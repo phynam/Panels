@@ -10,7 +10,7 @@ html {
   overflow: hidden;
 }
 
-.panels__panel {
+.panels [class^="panels__panel"] {
   transition: left 400ms, right 400ms;
 }
 
@@ -56,6 +56,15 @@ html {
   background-color: #eee;
 }
 
+.panels__panel--modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .panels.is_active--left .panels__panel--left {
   left: 0;
 }
@@ -74,4 +83,8 @@ html {
 }
 .panels.is_active--right .panels__panel--right {
   right: 0;
+}
+
+.panels.is_active--modal .panels__panel--modal {
+  display: block;
 }
