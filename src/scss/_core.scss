@@ -5,13 +5,13 @@
 .panels {
   height: 100%;
 
-  & > * {
-    transition: left $animation-time, right $animation-time;
-  }
-
   &.is_active {
     overflow: hidden;
   }
+}
+
+.panels__panel {
+  transition: left $animation-time, right $animation-time;
 }
 
 ////////////////////
@@ -23,6 +23,7 @@
   right: 0; left: 0;
   min-height: 100%;
   z-index: 1;
+  background: $panel-main-bg-color;
 
   &:before {
     display: none;
@@ -32,7 +33,8 @@
     height: 100%;
     z-index: 10;
     transition: background-color $animation-time;
-    background-color: $panel-main-disabled-color;
+    background-color: $panel-main-disabled-bg-color;
+    opacity: $panel-main-disabled-opacity;
   }
 }
 
@@ -55,11 +57,13 @@
 .panels__panel--left {
   width: $panel-left-width;
   left: -$panel-left-width + $animation-offset;
+  background-color: $panel-left-bg-color;
 }
 
 .panels__panel--right {
   width: $panel-right-width;
   right: -$panel-right-width + $animation-offset;
+  background-color: $panel-right-bg-color;
 }
 
 ///////////////////////////

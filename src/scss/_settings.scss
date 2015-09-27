@@ -10,11 +10,15 @@ $animation-offset: 50px;
 ////////////////////
 
 $panel-main-bg-color: #eee;
-$panel-main-disabled-color: rgba(180, 180, 180, 0.6);
+$panel-main-disabled-bg-color: #ddd;
+$panel-main-disabled-opacity: 0.6;
 
 ///////////////////////////
 //// Off-canvas panels ////
 ///////////////////////////
 
 $panel-left-width: 200px;
+$panel-left-bg-color: #eee;
+
 $panel-right-width: 270px;
+$panel-right-bg-color: #000;
