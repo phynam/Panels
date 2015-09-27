@@ -67,18 +67,6 @@
   background-color: $panel-right-bg-color;
 }
 
-/////////////////////
-//// Modal panel ////
-/////////////////////
-
-.panels__panel--modal {
-  display: none;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 ///////////////////////////
 //// Positioning logic ////
 ///////////////////////////
