@@ -11,7 +11,7 @@
   }
 }
 
-.panels [class^="panels__panel"] {
+.panels [class^='panels__panel'] {
   transition: left $animation-time, right $animation-time;
 }
 
@@ -39,7 +39,7 @@
   }
 }
 
-.panels__panel--main.is_disabled {
+.panels__panel--main[aria-disabled='true'] {
   &:before {
     display: block;
   }

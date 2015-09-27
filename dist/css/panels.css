@@ -10,7 +10,7 @@ html {
   overflow: hidden;
 }
 
-.panels [class^="panels__panel"] {
+.panels [class^='panels__panel'] {
   transition: left 400ms, right 400ms;
 }
 
@@ -34,7 +34,7 @@ html {
   opacity: 0.6;
 }
 
-.panels__panel--main.is_disabled:before {
+.panels__panel--main[aria-disabled='true']:before {
   display: block;
 }
 
