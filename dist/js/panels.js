@@ -7,7 +7,7 @@
 
             if(typeof panel != 'undefined') {
 
-                this.close_active();
+                this.close();
 
                 var $panel = $(_panel_class_prefix + panel);
                 $panel.attr('aria-hidden', 'false');
@@ -34,10 +34,8 @@
             _panel_class_prefix = '.panels__panel--',
             _panel_overlay_class = '.panels__overlay',
             _active_panel = undefined,
-            _animation_time = 400,
             _$panels = $('.panels'),
-            _$panels_main = _$panels.find(_panel_class_prefix + 'main'),
-            _$panels_overlay = _$panels.find(_panel_overlay_class);
+            _$panels_main = _$panels.find(_panel_class_prefix + 'main');
 
         // Private methods
         var _init = function() {
@@ -50,18 +48,8 @@
                 });
 
                 _$panels.on('click', _panel_overlay_class, function() {
-                    _context.close_active();
+                    _context.close();
                 });
-
-                // Get animation time value from pseudo element TODO: Move this exclusively to JS
-                if(window.getComputedStyle) {
-                    var el = _$panels[0],
-                        raw_val = window.getComputedStyle(el,':after').getPropertyValue('content');
-
-                    if(raw_val.length > 0) {
-                        _animation_time = parseInt(raw_val.match(/\d+/)[0]);
-                    }
-                }
             });
         };
 

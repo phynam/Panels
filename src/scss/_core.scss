@@ -10,11 +10,6 @@
   &.is_active {
     overflow-y: hidden;
   }
-
-  &:after {
-    display: none;
-    content: '#{$animation-time}';
-  }
 }
 
 .panels [class^='panels__panel'] {
