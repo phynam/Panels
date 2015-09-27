@@ -3,7 +3,6 @@
 ////////////////
 
 .panels {
-  position: relative;
   height: 100%;
 
   & > * {
@@ -19,7 +18,7 @@
 //// Main panel ////
 ////////////////////
 
-.panels__main {
+.panels__panel--main {
   position: relative;
   right: 0; left: 0;
   min-height: 100%;
@@ -37,7 +36,7 @@
   }
 }
 
-.panels__main.is_disabled {
+.panels__panel--main.is_disabled {
   &:before {
     display: block;
   }
@@ -47,50 +46,50 @@
 //// Side panels ////
 /////////////////////
 
-.panels__left, .panels__right {
+.panels__panel--left, .panels__panel--right {
   position: fixed;
   height: 100%;
   top: 0;
 }
 
-.panels__left {
+.panels__panel--left {
   width: $panel-left-width;
   left: -$panel-left-width + $animation-offset;
 }
 
-.panels__right {
+.panels__panel--right {
   width: $panel-right-width;
   right: -$panel-right-width + $animation-offset;
 }
 
-//////////////////////////
-//// Transition logic ////
-//////////////////////////
+///////////////////////////
+//// Positioning logic ////
+///////////////////////////
 
 .panels.is_left_active {
-  .panels__left {
+  .panels__panel--left {
     left: 0;
   }
 
-  .panels__main {
+  .panels__panel--main {
     left: $panel-left-width;
   }
 
-  .panels__right {
-    left: $panel-left-width * 2;
+  .panels__panel--right {
+    right: -($panel-left-width * 2);
   }
 }
 
 .panels.is_right_active {
-  .panels__left {
+  .panels__panel--left {
     left: -($panel-right-width * 2);
   }
 
-  .panels__main {
+  .panels__panel--main {
     left: -$panel-right-width;
   }
 
-  .panels__right {
+  .panels__panel--right {
     right: 0;
   }
 }

@@ -30,7 +30,7 @@
 
         // Private properties
         var _context = this,
-            _panel_class_prefix = '.panels__',
+            _panel_class_prefix = '.panels__panel--',
             _active_panel,
             _$panels = $('.panels'),
             _$panels_main = _$panels.find(_panel_class_prefix + 'main');
@@ -45,7 +45,7 @@
                     _context.show(trigger);
                 });
 
-                _$panels.on('click', '.panels__main.is_disabled', function() {
+                _$panels.on('click', (_panel_class_prefix + 'main.is_disabled'), function() {
                     _context.close_active();
                 });
             });

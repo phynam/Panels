@@ -1,9 +1,8 @@
-html, body {
+html {
   height: 100%;
 }
 
 .panels {
-  position: relative;
   height: 100%;
 }
 .panels > * {
@@ -13,14 +12,14 @@ html, body {
   overflow: hidden;
 }
 
-.panels__main {
+.panels__panel--main {
   position: relative;
   right: 0;
   left: 0;
   min-height: 100%;
   z-index: 1;
 }
-.panels__main:before {
+.panels__panel--main:before {
   display: none;
   position: absolute;
   content: '';
@@ -31,42 +30,42 @@ html, body {
   background-color: rgba(180, 180, 180, 0.6);
 }
 
-.panels__main.is_disabled:before {
+.panels__panel--main.is_disabled:before {
   display: block;
 }
 
-.panels__left, .panels__right {
+.panels__panel--left, .panels__panel--right {
   position: fixed;
   height: 100%;
   top: 0;
 }
 
-.panels__left {
+.panels__panel--left {
   width: 200px;
   left: -150px;
 }
 
-.panels__right {
+.panels__panel--right {
   width: 270px;
   right: -220px;
 }
 
-.panels.is_left_active .panels__left {
+.panels.is_left_active .panels__panel--left {
   left: 0;
 }
-.panels.is_left_active .panels__main {
+.panels.is_left_active .panels__panel--main {
   left: 200px;
 }
-.panels.is_left_active .panels__right {
-  left: 400px;
+.panels.is_left_active .panels__panel--right {
+  right: -400px;
 }
 
-.panels.is_right_active .panels__left {
+.panels.is_right_active .panels__panel--left {
   left: -540px;
 }
-.panels.is_right_active .panels__main {
+.panels.is_right_active .panels__panel--main {
   left: -270px;
 }
-.panels.is_right_active .panels__right {
+.panels.is_right_active .panels__panel--right {
   right: 0;
 }
