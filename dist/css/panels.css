@@ -81,13 +81,13 @@ html {
 
 .panels__panel--left {
   width: 200px;
-  left: -150px;
+  left: -160px;
   background-color: #fff;
 }
 
 .panels__panel--right {
   width: 270px;
-  right: -220px;
+  right: -230px;
   background-color: #fff;
 }
 
